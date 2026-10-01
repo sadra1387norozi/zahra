@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>زهرا، یه دعوت مخصوص</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--c1:#fbe3e8;--c2:#f4c6d0;--c3:#e8a2b3;--brown:#4a2c22;--brown2:#7b4b39;--card:rgba(255,248,249,.72);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--c1:#2a1812;--c2:#3b231b;--c3:#6b3a40;--brown:#fbe3e8;--brown2:#f0c2b4;--card:rgba(58,36,30,.7)}}
+:root[data-theme="dark"]{--c1:#2a1812;--c2:#3b231b;--c3:#6b3a40;--brown:#fbe3e8;--brown2:#f0c2b4;--card:rgba(58,36,30,.7)}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font-family:'Vazirmatn',Tahoma,sans-serif;color:var(--brown);display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden;
+background:linear-gradient(130deg,var(--c1),var(--c2),#d9a58f,var(--c3));background-size:300% 300%;animation:bg 14s ease infinite}
+@keyframes bg{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.petal{position:fixed;top:-40px;width:14px;height:18px;border-radius:70% 0 70% 0;background:var(--c3);opacity:.7;animation:fall linear infinite;pointer-events:none}
+@keyframes fall{to{transform:translate3d(var(--dx),110vh,0) rotate(540deg)}}
+.card{position:relative;width:100%;max-width:410px;text-align:center;padding:26px 22px 30px;border-radius:36px;background:var(--card);
+backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1.5px solid rgba(255,255,255,.6);box-shadow:0 20px 60px rgba(74,44,34,.3);
+animation:enter 1s cubic-bezier(.2,1.2,.3,1) both}
+@keyframes enter{from{opacity:0;transform:translateY(40px) scale(.9)}}
+.rose{width:150px;height:150px;margin:0 auto;animation:float 3.5s ease-in-out infinite;filter:drop-shadow(0 10px 14px rgba(120,50,70,.35))}
+@keyframes float{50%{transform:translateY(-10px) rotate(3deg)}}
+.ribbon{display:inline-block;margin:-6px 0 10px;padding:6px 30px;border-radius:999px;font-weight:900;font-size:26px;color:#fff6f7;
+background:linear-gradient(90deg,#7b4b39,#a2605a,#7b4b39);background-size:200%;animation:shine 3s linear infinite;box-shadow:0 6px 16px rgba(74,44,34,.3)}
+@keyframes shine{to{background-position:200% 0}}
+h1{font-size:23px;line-height:1.7;font-weight:900;margin:4px 0 4px;min-height:40px}
+p{margin:0 0 18px;color:var(--brown2);min-height:26px}
+.btns{display:flex;align-items:center;justify-content:center;gap:16px;min-height:84px}
+button{font-family:inherit;font-weight:700;border:0;border-radius:999px;cursor:pointer;transition:all .35s cubic-bezier(.3,1.5,.5,1);white-space:nowrap}
+button:focus-visible{outline:3px solid var(--brown);outline-offset:3px}
+#yes{background:linear-gradient(135deg,#7b4b39,#4a2c22);color:#fff6f7;font-size:19px;padding:15px 38px;box-shadow:0 8px 20px rgba(74,44,34,.4);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08)}}
+#no{background:#f6c3cd;color:#4a2c22;font-size:19px;padding:15px 38px}
+.shake{animation:shake .45s}
+@keyframes shake{20%{transform:translateX(-8px) rotate(-4deg)}40%{transform:translateX(8px) rotate(4deg)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+.puff{animation:puff .5s forwards}
+@keyframes puff{to{transform:scale(0) rotate(180deg);opacity:0}}
+#win{display:none}
+.show #ask{display:none}.show #win{display:block;animation:enter .8s both}
+.big{font-size:80px;display:inline-block;animation:beat 1s ease-in-out infinite}
+@keyframes beat{15%{transform:scale(1.25)}30%{transform:scale(1)}45%{transform:scale(1.2)}}
+.fly{position:fixed;font-size:26px;pointer-events:none;animation:fly 3.4s ease-out forwards}
+@keyframes fly{to{transform:translate(var(--x),var(--y)) rotate(var(--r));opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-iteration-count:1!important}.petal{display:none}}
+</style>
+</head>
+<body>
+<main class="card" id="card">
+  <div id="ask">
+    <svg class="rose" viewBox="0 0 120 120" aria-hidden="true">
+      <defs><radialGradient id="g" cx="50%" cy="45%"><stop offset="0" stop-color="#f7a9ba"/><stop offset="1" stop-color="#d9607f"/></radialGradient></defs>
+      <path d="M60 70 C58 90 60 105 62 118" stroke="#5f7a4a" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M61 96 C78 88 92 92 96 100 C84 108 70 104 61 96Z" fill="#6f8f55"/>
+      <path d="M60 100 C44 92 30 96 26 104 C38 110 52 106 60 100Z" fill="#7da062"/>
+      <circle cx="60" cy="52" r="40" fill="url(#g)"/>
+      <path d="M60 52 m-6 0 a6 6 0 1 1 6 6 a12 12 0 1 1 -12 -12 a20 20 0 1 1 20 20 a28 28 0 1 1 -28 -28" fill="none" stroke="#b8466a" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="44" cy="34" r="6" fill="#fff" opacity=".25"/>
+    </svg>
+    <div class="ribbon">زهرا</div>
+    <h1 id="title"></h1>
+    <p id="msg">یه قرار کوچولو، فقط من و تو ☕</p>
+    <div class="btns"><button id="yes">آره 💗</button><button id="no">نه</button></div>
+  </div>
+  <div id="win">
+    <div class="big">🥰</div>
+    <h1 style="min-height:0">می‌دونستم قبول می‌کنی زهرا!</h1>
+    <p>پس قرار ما یه قهوه و کلی خنده ☕🌸</p>
+  </div>
+</main>
+<script>
+(function(){
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){for(var i=0;i<22;i++){var p=document.createElement('div');p.className='petal';
+    p.style.left=Math.random()*100+'vw';p.style.setProperty('--dx',(Math.random()*120-60)+'px');
+    var s=.6+Math.random()*1.1;p.style.transform='scale('+s+')';
+    p.style.animationDuration=(7+Math.random()*8)+'s';p.style.animationDelay=(-Math.random()*12)+'s';document.body.appendChild(p);}}
+  var text='زهرا، با من میای دیت؟ 🤎',t=document.getElementById('title'),k=0;
+  (function type(){t.textContent=text.slice(0,k++);if(k<=text.length)setTimeout(type,70);})();
+  var steps=0,max=6,msgs=["مطمئنی؟ 🥺","یه بار دیگه فکر کن...","دکمه نه داره کوچیک می‌شه ها 😅","دیگه تقریباً نمی‌بینیش!","آخرین شانس 🙈","دیدی؟ دیگه نه نداریم 😎"];
+  var no=document.getElementById('no'),yes=document.getElementById('yes'),msg=document.getElementById('msg');
+  no.addEventListener('click',function(){
+    steps++;
+    msg.textContent=msgs[steps-1];
+    if(steps>=max){no.classList.add('puff');setTimeout(function(){no.style.display='none'},480);yes.style.fontSize='25px';burst(8,'💔');return;}
+    no.classList.remove('shake');void no.offsetWidth;no.classList.add('shake');
+    var s=1-steps*0.16;
+    no.style.fontSize=Math.max(19*s,5)+'px';
+    no.style.padding=(15*s)+'px '+(38*s)+'px';
+    yes.style.fontSize=(19+steps*2)+'px';
+  });
+  function burst(n,e){var em=e?[e]:['💗','🌹','🤎','🌸','💞','✨'];
+    for(var i=0;i<n;i++){var d=document.createElement('div');d.className='fly';d.textContent=em[i%em.length];
+      d.style.left='50vw';d.style.top='55vh';
+      d.style.setProperty('--x',(Math.random()*90-45)+'vw');d.style.setProperty('--y',(-Math.random()*70-10)+'vh');d.style.setProperty('--r',(Math.random()*360-180)+'deg');
+      document.body.appendChild(d);(function(d){setTimeout(function(){d.remove()},3500)})(d);}}
+  yes.addEventListener('click',function(){
+    document.getElementById('card').classList.add('show');
+    burst(40);setTimeout(function(){burst(30)},700);
+  });
+})();
+</script>
+</body>
+</html>
